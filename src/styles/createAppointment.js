@@ -41,10 +41,33 @@ export const style = StyleSheet.create({
         marginBottom: 20,
         borderRadius: 5
     },
-    dateTimePicker:{
+    datePickerConatiner:{
         width: '100%',
-        height: 'auto'
+        height: 'auto',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 5
     },
+    dateTimePicker:{
+        width: '50%',
+        height: 'auto',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 5,
+        paddingLeft: 25,
+        paddingRight: 5,
+        paddingTop: 5,
+        paddingBottom: 5,
+        // boxShadow: '0px 0px 5px 0px rgb(0,0,0)',
+        borderWidth: 2,
+        borderColor: 'rgb(0, 174, 255)',
+        justifyContent: 'space-between',
+        borderRadius: 10
+    },
+    
     textTitleInput:{
         position: 'absolute',
         width: 'auto',
@@ -62,10 +85,30 @@ export const style = StyleSheet.create({
 
     btnCalendar:{
         width: 50,
-        height: 50
+        height: 50,
+        boxShadow: '0px 0px 5px 0px rgb(0,0,0)',
+        borderRadius: 5
     },
     calendarImg:{
         width: '100%',
         height: '100%'
+    },
+
+    btnAppointmentContainer:{
+        width: '100%',
+        height: 'auto',
+        marginTop: 40,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    btnCreateAppointment:{
+        width: '100%',
+        height: 70,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgb(0, 174, 255)',
+        borderRadius: 10
     }
 })
