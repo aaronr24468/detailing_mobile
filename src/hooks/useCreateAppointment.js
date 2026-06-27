@@ -1,6 +1,9 @@
 import { useState, useCallback, useEffect } from "react";
+import { createAppointment } from "../services/appointmentService";
 
 export const useCreateAppointment = () => {
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null)
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
@@ -16,9 +19,7 @@ export const useCreateAppointment = () => {
     const [timeString, setTimeString] = useState('00:00');
     const [showTime, setShowTime] = useState(false)
 
-    const createAppointment = async () => {
-
-    }
+    
 
     const handleDateChange = (event, selectedDate) => {
         if (selectedDate) {
@@ -51,6 +52,38 @@ export const useCreateAppointment = () => {
         }
     }
 
+    const createAppointmentAction = async() =>{
+        try {
+            setLoading(true)
+            const data = {
+                name: name,
+                address: address,
+                phone: phone,
+                packages: packages,
+                date: dateString,
+                time: timeString,
+                price: price,
+                size: size
+            }
+            
+            const res = await createAppointment(data)
+
+            if(!res.ok) return setError(res.message);
+
+            alert('Se agendo cita con exito')
+
+            setName(''), setAddress(''), setPhone(''), setPackage('Basico'), setSize('Small'), setPrice(''),
+            setDateString('YYYY/MM/DD'), setTimeString('00:00')
+
+        } catch (error) {
+            setError(error.message || 'Error de servidor')
+        }finally{
+            setLoading(false)
+        }
+    }
+
+    
+
 
     return {
         setName,
@@ -70,6 +103,8 @@ export const useCreateAppointment = () => {
         time,
         setSize,
         size,
-        setPrice
+        setPrice,
+        price,
+        createAppointmentAction
     }
 }

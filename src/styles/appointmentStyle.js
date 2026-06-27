@@ -32,7 +32,48 @@ export const styleAppointment = StyleSheet.create({
     scrollList:{
         width: "100%",
         height: '100%',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingTop: 10,
+        
     },
+    itemContainer:{
+        width: '100%',
+        height: 130,
+        display: 'flex',
+        flexDirection: 'row',
+        boxShadow: '0px 0px 5px 0px rgb(0,0,0)',
+        borderRadius: 10,
+        gap: 10,
+        marginTop: 5,
+        marginBottom: 15
+    },
+    dateTimeContainer:{
+        width: '30%',
+        height: '100%'
+    },
+    descriptionDetailsContainer:{
+        width: '70%',
+        height: '100%'
+    },
+    dateStyle:{
+        width: '100%',
+        height: "30%",
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgb(127, 170, 248)',
+        borderTopLeftRadius: 10
+    },
+    timeStyle:{
+        width: '100%',
+        height: '70%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgb(218, 233, 240)',
+        borderBottomLeftRadius: 10
+    }
     
 })

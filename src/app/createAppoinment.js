@@ -8,11 +8,14 @@ import { useCreateAppointment } from "../hooks/useCreateAppointment";
 import { useState } from "react";
 import { DatePickers } from "../components/dateTimePikers";
 import { InputsAppointment } from "../components/inputsAppointmets";
+import { useListApointment } from "../hooks/useListAppointment";
 
 
 export default function TabThirdScreen() {
     const hook = useCreateAppointment();
+    const hook2 = useListApointment()
 
+    
     return (
         <View style={style.main}>
             <StatusBar hidden />
@@ -27,7 +30,7 @@ export default function TabThirdScreen() {
                 </View>
 
                 <View style={style.btnAppointmentContainer}>
-                    <Pressable style={style.btnCreateAppointment}>
+                    <Pressable style={style.btnCreateAppointment} onPress={hook.createAppointmentAction}>
                         <Text>Crear cita</Text>
                     </Pressable>
                 </View>

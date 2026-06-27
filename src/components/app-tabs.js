@@ -6,7 +6,7 @@ export default function AppTabs() {
 
 
   return (
-    <NativeTabs backgroundColor="white">
+    <NativeTabs backgroundColor="rgb(0, 174, 255)">
       <NativeTabs.Trigger name="index">
         <NativeTabs.Trigger.Label>Home</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon

@@ -8,15 +8,15 @@ export const InputsAppointment = ({ hook }) => {
         <>
             <View style={style.inputsDataContainer}>
                 <Text style={style.textTitleInput}>Fullname</Text>
-                <TextInput onChange={(value) => hook.setName(value)} style={style.textInputs} />
+                <TextInput onChangeText={(value) => hook.setName(value)} style={style.textInputs} />
             </View>
             <View style={style.inputsDataContainer}>
                 <Text style={style.textTitleInput}>Address</Text>
-                <TextInput onChange={(value) => hook.setName(value)} style={style.textInputs} />
+                <TextInput onChangeText={(value) => hook.setAddress(value)} style={style.textInputs} />
             </View>
             <View style={style.inputsDataContainer}>
                 <Text style={style.textTitleInput}>Phone</Text>
-                <TextInput keyboardType="number-pad" onChange={(value) => hook.setName(value)} style={style.textInputs} placeholder="317-000-0000" />
+                <TextInput keyboardType="number-pad" onChangeText={(value) => hook.setPhone(value)} style={style.textInputs} placeholder="317-000-0000" />
             </View>
             <View style={style.inputsDataContainer}>
                 <Text style={style.textTitleInput}>Package</Text>
@@ -42,7 +42,7 @@ export const InputsAppointment = ({ hook }) => {
             </View>
             <View style={style.inputsDataContainer}>
                 <Text style={style.textTitleInput}>Price</Text>
-                <TextInput keyboardType="number-pad" onChange={(value) => hook.setPrice(value)} style={style.textInputs} placeholder="$0" />
+                <TextInput keyboardType="number-pad" onChangeText={(value) => hook.setPrice(value)} style={style.textInputs} placeholder="$0" />
             </View>
         </>
     )
