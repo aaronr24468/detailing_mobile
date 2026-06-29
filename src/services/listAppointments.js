@@ -10,3 +10,14 @@ export const getListA = async() =>{
 
     return(response.json())
 }
+
+export const getAppointment = async(id) =>{
+    const response = await fetch(`${URL_PATH}/appointment/get/appointment/${id}`,{
+        method: 'GET',
+        headers:{
+            "Content-Type":"application/json"
+        }
+    })
+
+    return(response.json())
+}

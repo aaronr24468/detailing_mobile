@@ -1,14 +1,17 @@
 import { useState, useEffect, useCallback } from "react";
 import { NativeTabs } from "expo-router/unstable-native-tabs";
 import { Stack } from "expo-router";
-import { getListA } from "../services/listAppointments";
+import { getAppointment, getListA } from "../services/listAppointments";
+import {DateTime} from 'luxon'
 
 export const useListApointment = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [state, setState] = useState(true);
     const [listAppointments, setListAppointments] = useState([])
-    const [refresh, setRefresh] = useState(false)
+    const [refresh, setRefresh] = useState(false);
+    const [screen, setScreen] = useState('list');
+    const [appointmentInfo, setAppointmentInfo] = useState([])
 
     const getListAppointments = useCallback(async () => {
         try {
@@ -64,6 +67,27 @@ export const useListApointment = () => {
         }
     }
 
+    const localTime = (hour) =>{
+        const time = hour
+        const format12 = DateTime.fromFormat(time, 'H:mm').toFormat('h:mm a')
+        return(format12)
+    }
+
+    const getInfoAppointment = async(id) =>{
+        try {
+            setLoading(true)
+            const data = await getAppointment(id);
+            if(!data.ok) return setError(data.message)
+            const info = data.appointment[0]
+            setAppointmentInfo(info)
+            setScreen('appointmentInfo')
+        } catch (error) {
+            setError(error.message || "Error de servidor")
+        }finally{
+            setLoading(false)
+        }
+    }
+
     useEffect(() => {
         getListAppointments();
     }, [])
@@ -75,6 +99,11 @@ export const useListApointment = () => {
         getDayWork,
         getListAppointments,
         setRefresh,
-        refresh
+        refresh,
+        getInfoAppointment,
+        screen,
+        setScreen,
+        appointmentInfo,
+        localTime
     }
 }

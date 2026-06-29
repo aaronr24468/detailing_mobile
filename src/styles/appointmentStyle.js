@@ -47,7 +47,7 @@ export const styleAppointment = StyleSheet.create({
         borderRadius: 10,
         gap: 10,
         marginTop: 5,
-        marginBottom: 15
+        marginBottom: 15,
     },
     dateTimeContainer:{
         width: '30%',
@@ -74,6 +74,116 @@ export const styleAppointment = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'rgb(218, 233, 240)',
         borderBottomLeftRadius: 10
+    },
+
+
+
+    appointmentView:{
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgb(255, 255, 255)',
+        position: "relative",
+        paddingTop: 60,
+        paddingBottom: 70
+    },
+    titleScreen:{
+        fontSize: 25,
+        fontWeight: 600
+    },
+    imageTruck:{
+        width: 150,
+        height: 100,
+        objectFit: 'cover',
+        position: 'absolute',
+        top: '8%',
+        left: '50%',
+        transform: [{translateX: '-50%'}, {translateY: '-50%'}],
+        zIndex: 100
+    },
+    InfoAppointContainer:{
+        width: '100%',
+        height: '100%',
+        borderWidth: 5,
+        borderColor: 'rgb(150, 150, 150)',
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        backgroundColor: 'rgb(233, 233, 233)',
+        boxShadow: 'inset 0px 0px 5px 0px rgb(0,0,0)',
+        display: 'flex',
+        flexDirection: 'column',
+        padding: 10,
+        gap: 5
+    },
+    InfoContainer:{
+        width: '100%',
+        height: '85%'
+    },
+    nameContainer:{
+        width: '100%',
+        height: '15%',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent:"center",
+        gap: 10,
+        borderBottomWidth: 3,
+        borderBottomColor: 'rgb(179, 179, 179)'
+    },
+    allInfo:{
+        width: '100%',
+        height: '85%',
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 5
+    },
+    infoBox:{
+        width: '49%',
+        height: '40%',
+        borderBottomWidth: 3,
+        borderBottomColor: 'rgb(179, 179, 179)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 5
+    },
+    infoSize:{
+        width: '49%',
+        height: '40%',
+        borderBottomWidth: 3,
+        borderBottomColor: 'rgb(179, 179, 179)',
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    containSize:{
+        width: '50%',
+        height: '100%',
+        display: 'flex',
+        alignItems:"center",
+        justifyContent: 'center'
+    },
+    infoPrice:{
+        width: '100%',
+        height: '20%',
+        borderBottomWidth: 3,
+        borderColor: 'rgb(179, 179, 179)',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 10
+    },
+    btnAction:{
+        width: '100%',
+        height: '15%',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 10,
+        gap: 4
     }
     
 })
